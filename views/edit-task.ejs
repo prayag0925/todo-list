@@ -1,0 +1,68 @@
+<%- include('partials/header') %>
+
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+
+                <div class="card">
+                    <div class="card-header bg-warning">
+                        <h5>Edit Task #<%= task.id %>
+                        </h5>
+                    </div>
+                    <div class="card-body">
+
+                        <% if(error !="" ) { %>
+                            <div class="alert alert-danger">
+                                <%= error %>
+                            </div>
+                            <% } %>
+
+                                <form action="/edit-task/<%= task.id %>" method="POST">
+
+                                    <div class="mb-3">
+                                        <label class="form-label">Task Title</label>
+                                        <input type="text" class="form-control" name="title" value="<%= task.title %>">
+                                    </div>
+
+                                    <div class="mb-3">
+                                        <label class="form-label">Description</label>
+                                        <textarea class="form-control" name="description"
+                                            rows="3"><%= task.description %></textarea>
+                                    </div>
+
+                                    <div class="mb-3">
+                                        <label class="form-label">Priority</label>
+                                        <select class="form-select" name="priority">
+                                            <option value="High" <%=task.priority=="High" ? "selected" : "" %>>High
+                                            </option>
+                                            <option value="Medium" <%=task.priority=="Medium" ? "selected" : "" %>
+                                                >Medium</option>
+                                            <option value="Low" <%=task.priority=="Low" ? "selected" : "" %>>Low
+                                            </option>
+                                        </select>
+                                    </div>
+
+                                    <div class="mb-3">
+                                        <label class="form-label">Status</label>
+                                        <select class="form-select" name="status">
+                                            <option value="Pending" <%=task.status=="Pending" ? "selected" : "" %>
+                                                >Pending</option>
+                                            <option value="In Progress" <%=task.status=="In Progress" ? "selected" : ""
+                                                %>>In Progress</option>
+                                            <option value="Completed" <%=task.status=="Completed" ? "selected" : "" %>
+                                                >Completed</option>
+                                        </select>
+                                    </div>
+
+                                    <button type="submit" class="btn btn-warning">Update Task</button>
+                                    <a href="/" class="btn btn-secondary">Cancel</a>
+
+                                </form>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <%- include('partials/footer') %>

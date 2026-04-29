@@ -1,0 +1,85 @@
+body {
+    background-color: #f5f6fa;
+}
+
+.navbar {
+    box-shadow: 0 2px 6px rgba(70, 41, 215, 0.1);
+}
+
+/* stat cards */
+.stat-card {
+    padding: 15px;
+    text-align: center;
+    color: white;
+    border-radius: 8px;
+}
+
+.stat-number {
+    font-size: 1.8rem;
+    font-weight: bold;
+}
+
+.stat-label {
+    font-size: 0.85rem;
+    margin-top: 5px;
+}
+
+.stat-blue {
+    background-color: #8e0873;
+}
+
+.stat-orange {
+    background-color: #28787f;
+}
+
+.stat-cyan {
+    background-color: #0dcaf0;
+}
+
+.stat-green {
+    background-color: #6a4dd3;
+}
+
+/* priority badges */
+.bg-danger-soft {
+    background-color: #ffe0de;
+}
+
+.bg-warning-soft {
+    background-color: #fff3cd;
+}
+
+.bg-success-soft {
+    background-color: #d1f2db;
+}
+
+/* status pills */
+.status-pill {
+    font-size: 0.75rem;
+    font-weight: bold;
+    padding: 4px 10px;
+    border-radius: 20px;
+    display: inline-block;
+}
+
+.status-pending {
+    background-color: #fff3cd;
+    color: #781b39;
+}
+
+.status-progress {
+    background-color: #cff4fc;
+    color: gray
+}
+
+.status-done {
+    background-color: #d1f2db;
+    color: #0a5c2a;
+}
+
+/* footer */
+.footer {
+    padding: 15px 0;
+    border-top: 1px solid #dee2e6;
+    background-color: #fff;
+}

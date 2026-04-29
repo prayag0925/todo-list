@@ -1,0 +1,133 @@
+<%- include('partials/header') %>
+
+    <div class="container mt-4">
+
+        <div class="d-flex justify-content-between align-items-center mb-4">
+            <h4>Dashboard</h4>
+            <a href="/add-task" class="btn btn-primary">+ Add Task</a>
+        </div>
+
+        <% if(msg !="" ) { %>
+            <div class="alert alert-success">
+                <%= msg %>
+            </div>
+            <% } %>
+
+                <!-- Stats Cards -->
+                <div class="row mb-4">
+                    <div class="col-md-3">
+                        <div class="stat-card stat-blue">
+                            <div class="stat-number">
+                                <%= total %>
+                            </div>
+                            <div class="stat-label">Total Tasks</div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="stat-card stat-orange">
+                            <div class="stat-number">
+                                <%= pending %>
+                            </div>
+                            <div class="stat-label">Pending</div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="stat-card stat-cyan">
+                            <div class="stat-number">
+                                <%= inprogress %>
+                            </div>
+                            <div class="stat-label">In Progress</div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="stat-card stat-green">
+                            <div class="stat-number">
+                                <%= completed %>
+                            </div>
+                            <div class="stat-label">Completed</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Task Table -->
+                <div class="card">
+                    <div class="card-header">
+                        <h6>Task List</h6>
+                    </div>
+                    <div class="card-body">
+
+                        <% if(tasks.length==0) { %>
+                            <p>No tasks found. <a href="/add-task">Add a task</a></p>
+                            <% } else { %>
+
+                                <table class="table table-bordered">
+                                    <thead>
+                                        <tr>
+                                            <th>#ID</th>
+                                            <th>Title</th>
+                                            <th>Description</th>
+                                            <th>Priority</th>
+                                            <th>Status</th>
+                                            <th>Actions</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <% for(var i=0; i < tasks.length; i++) { %>
+                                            <tr>
+                                                <td>#<%= tasks[i].id %>
+                                                </td>
+                                                <td>
+                                                    <%= tasks[i].title %>
+                                                </td>
+                                                <td>
+                                                    <%= tasks[i].description %>
+                                                </td>
+                                                <td>
+                                                    <% if(tasks[i].priority=="High" ) { %>
+                                                        <span class="badge bg-danger">High</span>
+                                                        <% } else if(tasks[i].priority=="Medium" ) { %>
+                                                            <span class="badge bg-warning">Medium</span>
+                                                            <% } else { %>
+                                                                <span class="badge bg-success">Low</span>
+                                                                <% } %>
+                                                </td>
+                                                <td>
+                                                    <% if(tasks[i].status=="Pending" ) { %>
+                                                        <span class="badge bg-secondary">Pending</span>
+                                                        <% } else if(tasks[i].status=="In Progress" ) { %>
+                                                            <span class="badge bg-info">In Progress</span>
+                                                            <% } else { %>
+                                                                <span class="badge bg-success">Completed</span>
+                                                                <% } %>
+                                                </td>
+                                                <td>
+                                                    <a href="/edit-task/<%= tasks[i].id %>"
+                                                        class="btn btn-sm btn-warning">Edit</a>
+
+                                                    <% if(tasks[i].status !="Completed" ) { %>
+                                                        <form action="/update-status/<%= tasks[i].id %>" method="POST"
+                                                            style="display:inline">
+                                                            <button type="submit"
+                                                                class="btn btn-sm btn-info">Next</button>
+                                                        </form>
+                                                        <% } %>
+
+                                                            <form action="/delete/<%= tasks[i].id %>" method="POST"
+                                                                style="display:inline"
+                                                                onsubmit="return confirm('Delete this task?')">
+                                                                <button type="submit"
+                                                                    class="btn btn-sm btn-danger">Delete</button>
+                                                            </form>
+                                                </td>
+                                            </tr>
+                                            <% } %>
+                                    </tbody>
+                                </table>
+
+                                <% } %>
+                    </div>
+                </div>
+
+    </div>
+
+    <%- include('partials/footer') %>

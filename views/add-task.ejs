@@ -1,0 +1,54 @@
+<%- include('partials/header') %>
+
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+
+                <div class="card">
+                    <div class="card-header bg-primary text-white">
+                        <h5>Add New Task</h5>
+                    </div>
+                    <div class="card-body">
+
+                        <% if(error !="" ) { %>
+                            <div class="alert alert-danger">
+                                <%= error %>
+                            </div>
+                            <% } %>
+
+                                <form action="/add-task" method="POST">
+
+                                    <div class="mb-3">
+                                        <label class="form-label">Task Title</label>
+                                        <input type="text" class="form-control" name="title"
+                                            placeholder="Enter task title">
+                                    </div>
+
+                                    <div class="mb-3">
+                                        <label class="form-label">Description</label>
+                                        <textarea class="form-control" name="description" rows="3"
+                                            placeholder="Enter task description"></textarea>
+                                    </div>
+
+                                    <div class="mb-3">
+                                        <label class="form-label">Priority</label>
+                                        <select class="form-select" name="priority">
+                                            <option value="">-- Select Priority --</option>
+                                            <option value="High">High</option>
+                                            <option value="Medium">Medium</option>
+                                            <option value="Low">Low</option>
+                                        </select>
+                                    </div>
+
+                                    <button type="submit" class="btn btn-primary">Add Task</button>
+                                    <a href="/" class="btn btn-secondary">Cancel</a>
+
+                                </form>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <%- include('partials/footer') %>
