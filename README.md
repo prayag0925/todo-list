@@ -32,10 +32,16 @@ This application helps users manage their daily tasks with a clean dashboard, sm
 
 ## 📸 Screenshots
 
-📌 Dashboard Page
-📌 Add Task Page
-📌 Edit Task Page
-📌 Status Update
+📌 Dashboard Page : <img width="1920" height="913" alt="Screenshot 2026-04-28 230803" src="https://github.com/user-attachments/assets/8b1366c7-bf32-43f9-9204-78cc803b29a0" />
+
+📌 Add Task Page : <img width="1920" height="915" alt="Screenshot 2026-04-28 231150" src="https://github.com/user-attachments/assets/6b32206a-b01e-42ce-ae2f-f16ea1e6decf" />
+
+📌 Edit Task Page : <img width="1920" height="918" alt="Screenshot 2026-04-28 231947" src="https://github.com/user-attachments/assets/6ed3de49-b24a-4c94-b575-83affb0c9bbd" />
+
+📌 Status Update : <img width="1920" height="918" alt="Screenshot 2026-04-28 232104" src="https://github.com/user-attachments/assets/80e8ed46-745c-4b6a-9186-961034390459" />
+
+📌 Project Structure : <img width="1540" height="803" alt="Screenshot 2026-04-28 232234" src="https://github.com/user-attachments/assets/4729134d-17b2-4e73-a8f3-a0f563c3b60f" />
+
 
 *(Add your project screenshots here before uploading on GitHub)*
 
